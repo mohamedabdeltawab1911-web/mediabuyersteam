@@ -42,4 +42,14 @@ $$('[data-scroll]').forEach(b=>b.onclick=()=>{document.getElementById(b.dataset.
 $('#menuBtn').onclick=()=>$('#navLinks').classList.toggle('open');
 const lb=$('#lightbox'),lbImg=$('#lightboxImg');function openLb(src,title){lbImg.src=src;lbImg.alt=title||'Buyers visual';lb.classList.add('open');document.body.style.overflow='hidden'}function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}document.addEventListener('click',e=>{const el=e.target.closest('[data-lightbox]');if(el)openLb(el.dataset.lightbox,el.dataset.title||el.alt)});$('#closeLightbox').onclick=closeLb;lb.onclick=e=>{if(e.target===lb)closeLb()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.12});$$('.reveal').forEach(e=>obs.observe(e));
-</script></body></html>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      fbq('track', 'Contact');
+    });
+  });
+});
+</script>
+</body></html>
